@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit Zacatlán de las Manzanas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#b11226;
+  --light:#fff5f5;
+  --dark:#2b2b2b;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Montserrat',sans-serif;
+}
+
+body{
+  background:var(--light);
+  color:var(--dark);
+  line-height:1.7;
+}
+
+/* NAV */
+nav{
+  background:var(--red);
+  padding:15px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+
+nav a:hover{text-decoration:underline;}
+
+/* HERO */
+header{
+  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+  url("https://images.unsplash.com/photo-1502082553048-f009c37129b9") center/cover;
+  height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+}
+
+header h1{font-size:3rem;}
+header span{font-size:2.2rem;}
+
+/* SECTIONS */
+section{padding:70px 8%;}
+h2{color:var(--red); margin-bottom:25px; font-size:2.2rem;}
+p{margin-bottom:15px;}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  position:relative;
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  cursor:pointer;
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card div{
+  padding:20px;
+}
+
+.card h3{
+  color:var(--red);
+}
+
+/* OVERLAY MENU */
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(177,18,38,.9);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  opacity:0;
+  transition:.4s;
+}
+
+.card.active .overlay{opacity:1;}
+
+.overlay a{
+  background:white;
+  color:var(--red);
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:20px;
+  font-weight:600;
+  width:85%;
+  text-align:center;
+}
+
+/* VIDEO IMAGE */
+.video-container{
+  max-width:800px;
+  margin:auto;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.video-container img{
+  width:100%;
+  display:block;
+  cursor:pointer;
+  transition:transform .4s;
+}
+
+.video-container img:hover{
+  transform:scale(1.05);
+}
+
+/* REVIEWS */
+.review{
+  background:#ffe3e3;
+  padding:25px;
+  border-left:8px solid var(--red);
+  border-radius:15px;
+  margin-bottom:20px;
+  font-style:italic;
+}
+
+/* FOOTER */
+footer{
+  background:var(--red);
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#info">Information</a>
+  <a href="#places">Places</a>
+  <a href="#video">Video</a>
+  <a href="#map">Map</a>
+  <a href="#reviews">Reviews</a>
+</nav>
+
+<header>
+  <h1>Visit Zacatlán 🍎</h1>
+  <span>Culture, Nature & Apples</span>
+</header>
+
+<section id="info">
+<h2>History 🍎</h2>
+<p>
+Zacatlán was founded in 1562 during the Spanish colonial period and has deep
+pre-Hispanic roots linked to Nahua communities. These indigenous groups settled
+in the region due to its fertile land, abundant water, and cool mountain climate.
+</p>
+
+<p>
+Its name comes from the Nahuatl word “Zacatlán”, meaning “place of grass”,
+which reflects the natural environment of the area. During colonial times,
+agriculture became the main economic activity, shaping the town’s development
+and daily life.
+</p>
+
+<p>
+Over the years, Zacatlán became internationally known for its apple farming,
+earning recognition as one of the most important apple-producing regions in
+Mexico. Another defining element of its identity is clock manufacturing, an
+industry that brought craftsmanship, innovation, and worldwide prestige to the
+town. Today, apples and clocks symbolize Zacatlán’s tradition and history.
+</p>
+
+<h2>Culture 🍎</h2>
+<p>
+Zacatlán preserves indigenous traditions mixed with Spanish colonial heritage.
+Its churches, streets, and public squares reflect colonial architecture, while
+local customs remain strong in everyday life.
+</p>
+
+<p>
+Traditional music, dances, artisan crafts, and religious celebrations are deeply
+rooted in the community. The people of Zacatlán are known for their hospitality,
+strong family values, and community pride, making visitors feel welcomed.
+</p>
+
+<h2>Traditions 🍎</h2>
+<p>
+The Apple Fair, celebrated every August, is the most important festivity in
+Zacatlán. This celebration honors the apple harvest and the town’s agricultural
+heritage.
+</p>
+
+<p>
+The festival includes traditional dances, colorful parades, live music, cider
+tasting, handcrafted products, cultural exhibitions, and religious events.
+Throughout the year, other local festivities preserve ancestral customs and
+strengthen community bonds.
+</p>
+
+<h2>Food 🍎</h2>
+<p>
+Zacatlán is famous for its apple cider, apple bread, jams, and traditional sweets
+made using family recipes passed down through generations.
+</p>
+
+<p>
+Local cuisine also includes tamales, mole poblano, pastries, homemade desserts,
+and regional dishes prepared with fresh local ingredients, offering authentic
+flavors to visitors.
+</p>
+
+<h2>Why Visit Zacatlán? 🍎</h2>
+<p>
+Zacatlán offers fresh mountain air, foggy landscapes, waterfalls, rich culture,
+and delicious traditional food. Its natural beauty creates a peaceful and
+magical atmosphere.
+</p>
+
+<p>
+With viewpoints above the clouds, cultural festivals, historic streets, and warm
+hospitality, Zacatlán is an ideal destination for relaxation, photography,
+adventure, and cultural tourism.
+</p>
+</section>
+
+
+<section id="places">
+<h2>Places to Visit 🍎</h2>
+
+<div class="cards">
+
+<div class="card" onclick="toggle(this)">
+  <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9">
+  <div>
+    <h3>Waterfalls</h3>
+    <p>Tulimán waterfalls and natural beauty.</p>
+  </div>
+  <div class="overlay">
+    <a href="https://www.infobae.com/" target="_blank">Infobae</a>
+    <a href="https://espirituaventurero.com.mx/" target="_blank">Espíritu Aventurero</a>
+    <a href="https://www.eluniversal.com.mx/" target="_blank">El Universal</a>
+  </div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+  <div>
+    <h3>Glass Viewpoint</h3>
+    <p>Walk above the clouds.</p>
+  </div>
+  <div class="overlay">
+    <a href="https://www.mexicodesconocido.com.mx/" target="_blank">México Desconocido</a>
+  </div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1">
+  <div>
+    <h3>Town Center</h3>
+    <p>Colonial streets and markets.</p>
+  </div>
+  <div class="overlay">
+    <a href="https://www.visitpuebla.mx/" target="_blank">Visit Puebla</a>
+  </div>
+</div>
+
+</div>
+</section>
+
+<section id="video">
+<h2>Tourism Video 🍎</h2>
+
+<div class="video-container">
+  <a href="https://youtu.be/ehy-nBx8us0?si=Pcchbt7owVPyV--u" target="_blank">
+    <img src="https://img.youtube.com/vi/ehy-nBx8us0/maxresdefault.jpg"
+         alt="Click to watch Zacatlán Tourism Video">
+  </a>
+</div>
+</section>
+
+<!-- 🗺️ MAPA AGREGADO (ÚNICO CAMBIO) -->
+<section id="map">
+<h2>Where is Zacatlán? 🍎</h2>
+
+<div class="video-container">
+  <iframe 
+    src="https://www.google.com/maps?q=Zacatl%C3%A1n%20de%20las%20Manzanas%2C%20Puebla&output=embed"
+    width="100%" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+</div>
+
+</section>
+
+<section id="reviews">
+<h2>Traveler Reviews 🍎</h2>
+<div class="review">"A magical place full of fog, apples and unforgettable views."</div>
+<div class="review">"The Apple Fair is amazing and the food is delicious."</div>
+</section>
+
+<footer>
+<p>Visit Zacatlán de las Manzanas 🍎 | Nature • Culture • Tradition</p>
+</footer>
+
+<script>
+function toggle(card){
+  document.querySelectorAll(".card").forEach(c=>{
+    if(c!==card) c.classList.remove("active");
+  });
+  card.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
