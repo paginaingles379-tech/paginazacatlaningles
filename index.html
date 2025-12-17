@@ -25,6 +25,7 @@ body{
   background:var(--light);
   color:var(--dark);
   line-height:1.7;
+  overflow-x:hidden;
 }
 
 /* NAV */
@@ -43,9 +44,12 @@ nav a{
   color:white;
   text-decoration:none;
   font-weight:600;
+  transition:.3s;
 }
 
-nav a:hover{text-decoration:underline;}
+nav a:hover{
+  text-decoration:underline;
+}
 
 /* HERO */
 header{
@@ -138,11 +142,6 @@ p{margin-bottom:15px;}
   width:100%;
   display:block;
   cursor:pointer;
-  transition:transform .4s;
-}
-
-.video-container img:hover{
-  transform:scale(1.05);
 }
 
 /* REVIEWS */
@@ -161,6 +160,62 @@ footer{
   color:white;
   text-align:center;
   padding:20px;
+}
+
+/* ================= ANIMACIONES AGREGADAS ================= */
+
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(40px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeDown {
+  from {opacity:0; transform:translateY(-30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+nav{
+  animation:fadeDown .8s ease forwards;
+}
+
+header h1{
+  animation:fadeUp 1.2s ease forwards;
+}
+
+header span{
+  animation:fadeUp 1.6s ease forwards;
+}
+
+section{
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s ease;
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card{
+  transition:transform .5s ease, box-shadow .5s ease;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.video-container{
+  transition:transform .6s ease;
+}
+
+.video-container:hover{
+  transform:scale(1.04);
+}
+
+.review{
+  animation:fadeUp 1s ease forwards;
 }
 </style>
 </head>
@@ -256,7 +311,6 @@ adventure, and cultural tourism.
 </p>
 </section>
 
-
 <section id="places">
 <h2>Places to Visit 🍎</h2>
 
@@ -311,7 +365,6 @@ adventure, and cultural tourism.
 </div>
 </section>
 
-<!-- 🗺️ MAPA AGREGADO (ÚNICO CAMBIO) -->
 <section id="map">
 <h2>Where is Zacatlán? 🍎</h2>
 
@@ -325,7 +378,6 @@ adventure, and cultural tourism.
     loading="lazy">
   </iframe>
 </div>
-
 </section>
 
 <section id="reviews">
@@ -345,6 +397,21 @@ function toggle(card){
   });
   card.classList.toggle("active");
 }
+
+/* Animaciones al hacer scroll */
+const sections = document.querySelectorAll("section");
+
+const revealOnScroll = () => {
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top < window.innerHeight - 120) {
+      section.classList.add("show");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
 </script>
 
 </body>
